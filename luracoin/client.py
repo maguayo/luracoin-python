@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
-
 """
 Luracoin client
 
 Usage:
   client.py generateWallet [--save]
+  client.py mine
 
 Options:
   -h --help            Show help
@@ -12,19 +11,24 @@ Options:
   -n, --node HOSTNAME  The hostname of node to use for RPC (default: localhost)
   -p, --port PORT      Port node is listening on (default: 9999)
 """
-from __future__ import print_function
-
 import json
 
 from docopt import docopt
 
 from luracoin.exceptions import WalletAlreadyExistError
 from luracoin.wallet import create_wallet, generate_wallet
+from luracoin.pow import proof_of_work
 
 
 def main(args):  # type: ignore
     if args["generateWallet"]:
         generateWallet(save=args["--save"])
+    elif args["mine"]:
+        mine()
+
+
+def mine():
+    print("Not implemented yet.")
 
 
 def generateWallet(save):  # type: ignore
