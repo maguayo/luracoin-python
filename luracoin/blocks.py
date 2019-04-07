@@ -53,9 +53,7 @@ class Block:
         }
 
     def generate_hash(self) -> str:
-        txns_ids = ""
-        for t in self.txns:
-            txns_ids = txns_ids + t.id
+        txns_ids = "".join(map(lambda t: t.id, self.txns))
 
         string_to_hash = (
             str(self.version)

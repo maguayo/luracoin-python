@@ -17,7 +17,6 @@ from docopt import docopt
 
 from luracoin.exceptions import WalletAlreadyExistError
 from luracoin.wallet import create_wallet, generate_wallet
-from luracoin.pow import proof_of_work
 
 
 def main(args):  # type: ignore

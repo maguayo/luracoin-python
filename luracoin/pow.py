@@ -1,6 +1,3 @@
-from luracoin.helpers import bits_to_target
-
-
 def proof_of_work(block) -> int:  # type: ignore
     """
     Simple Proof of Work Algorithm
